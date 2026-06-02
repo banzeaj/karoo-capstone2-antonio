@@ -1,0 +1,27 @@
+INSERT INTO Suppliers
+(supplier_id, supplier_name, cert_expiry_date, status)
+VALUES
+(1, 'Green Valley Farms', CURRENT_DATE + INTERVAL '15 days', 'Active'),
+(2, 'Karoo Fresh Produce', CURRENT_DATE + INTERVAL '180 days', 'Active'),
+(3, 'Organic Harvest Co', CURRENT_DATE - INTERVAL '10 days', 'Active');
+
+INSERT INTO Orders
+(order_id, supplier_id, order_date)
+VALUES
+(101, 1, CURRENT_DATE - INTERVAL '30 days'),
+(102, 2, CURRENT_DATE - INTERVAL '20 days');
+
+INSERT INTO Harvests
+(harvest_id, supplier_id, harvest_date, yield_kg)
+VALUES
+(1, 1, CURRENT_DATE - INTERVAL '90 days', 1000),
+(2, 1, CURRENT_DATE - INTERVAL '60 days', 1100),
+(3, 1, CURRENT_DATE - INTERVAL '30 days', 700),
+
+(4, 2, CURRENT_DATE - INTERVAL '90 days', 900),
+(5, 2, CURRENT_DATE - INTERVAL '60 days', 950),
+(6, 2, CURRENT_DATE - INTERVAL '30 days', 980),
+
+(7, 3, CURRENT_DATE - INTERVAL '90 days', 1200),
+(8, 3, CURRENT_DATE - INTERVAL '60 days', 1250),
+(9, 3, CURRENT_DATE - INTERVAL '30 days', 1000);
